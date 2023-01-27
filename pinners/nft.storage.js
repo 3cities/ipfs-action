@@ -19,7 +19,7 @@ module.exports = {
     });
     if (verbose) console.log(`nft.storage: storing file(s) from ${path}`);
     const cid = await api.storeDirectory(files);
-    if (verbose) console.log(`nft.storage: top-level directory cid is ${cid}`);
+    if (verbose) console.log(`nft.storage: top-level directory cid is ${cid}. WARNING: files or a directory pinned to ipfs by the nft.storage javascript client may have different cidv1s than the same identical files or directory pinned to another service, such as pinata or infura. This is because the generated cid depends not only on the files' contents, but also at least on the selected multihash algorthm and chunk size. For this reason, the nft.storage service produces different cidv1s than other services in this workflow action. See https://stackoverflow.com/a/59184086`);
     const status = await api.status(cid);
     if (verbose) console.log(`nft.storage: upload status ${status}`);
     return {
