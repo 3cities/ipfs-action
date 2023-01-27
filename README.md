@@ -97,7 +97,7 @@ with:
 
 ### NFT.Storage starter
 ```
-uses: 3cities/ipfs-action@v0.3.5
+uses: 3cities/ipfs-action@v0.3.6
 with:
   path: ./build
   service: nft.storage
