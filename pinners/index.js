@@ -5,5 +5,5 @@ module.exports = {
   pinata: make(require("./pinata")),
   infura: make(require("./infura")),
   filebase: make(require("./filebase")),
-  nftStorage: make(require("./nft.storage")),
+  'nft.storage': make(require("./nft.storage")),
 };
