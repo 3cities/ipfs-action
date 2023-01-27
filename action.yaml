@@ -1,5 +1,5 @@
 name: 'Upload to IPFS'
-description: 'The GitHub Action allows uploading DApps or content to IPFS. It supports IPFS, Pinata, Infura pinning services.'
+description: 'The GitHub Action allows uploading DApps or content to IPFS. It supports IPFS, Pinata, Infura, and NFT.Storage pinning services.'
 branding:
   icon: 'upload-cloud'
   color: 'green'
@@ -15,7 +15,7 @@ inputs:
     description: 'Human name for pin'
     required: false
   service:
-    description: 'Type of target service to upload. Supported services [ipfs, pinata, infura, filebase]'
+    description: 'Type of target service to upload. Supported services [ipfs, pinata, infura, filebase, nft.storage]'
     required: false
     default: 'ipfs'
   timeout:
@@ -68,6 +68,9 @@ inputs:
     required: false
   infuraProjectSecret:
     description: '[infura] Project Secret. Required for infura service'
+    required: false
+  nftStorageApiKey:
+    description: '[nft.storage] API Key. Required for nft.storage service'
     required: false
 outputs:
   hash:

@@ -11,7 +11,7 @@ Parameter             |Required |Description
 `path`                |Yes      |Directory's path to upload.
 `pin`                 |No       |Pin object when adding. (Default `true`)
 `pinName`             |No       |Human name for pin.
-`service`             |No       |Type of target service to upload. Supported services [`ipfs`, `pinata`, `infura`, `filebase`]. (Default `ipfs`)
+`service`             |No       |Type of target service to upload. Supported services [`ipfs`, `pinata`, `infura`, `filebase`, `nft.storage`]. (Default `ipfs`)
 `timeout`             |No       |Request timeout. (Default `60000` (1 minute))
 `verbose`             |No       |Level of verbosity [`false` - quiet, `true` - verbose]. (Default `false`)
 `host`                |No       |[ipfs] IPFS host. Default `ipfs.komputing.org`
@@ -27,6 +27,8 @@ Parameter             |Required |Description
 `filebaseSecret`      |No       |[filebase] S3 Secret Key. Required for filebase service.
 `infuraProjectId`     |No       |[infura] Project ID. Required for infura service.
 `infuraProjectSecret` |No       |[infura] Project Secret. Required for infura service.
+`nftStorageApiKey`    |No       |[nft.storage] API Key. Required for nft.storage service.
+
 ## Outputs
 
 - `hash` - IPFS CID
@@ -91,4 +93,13 @@ with:
   filebaseBucket: ${{ secrets.FILEBASE_BUCKET }}
   filebaseKey: ${{ secrets.FILEBASE_KEY }}
   filebaseSecret: ${{ secrets.FILEBASE_SECRET }}
+```
+
+### NFT.Storage starter
+```
+uses: 3cities/ipfs-action@v0.3.2
+with:
+  path: ./build
+  service: nft.storage
+  nftStorageApiKey: ${{ secrets.NFT_STORAGE_API_KEY }}
 ```

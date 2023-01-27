@@ -1,6 +1,6 @@
 {
   "name": "ipfs-action",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "IPFS upload action",
   "main": "index.js",
   "scripts": {
@@ -39,9 +39,10 @@
     "@actions/github": "^5.1.1",
     "@filebase/client": "0.0.2",
     "@pinata/sdk": "1.1.23",
-    "files-from-path": "0.2.6",
+    "files-from-path": "^0.2.6",
     "ipfs-http-client": "55.0.0",
     "it-last": "1.0.5",
+    "nft.storage": "^7.0.0",
     "peer-id": "0.16.0"
   },
   "devDependencies": {
