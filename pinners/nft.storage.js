@@ -9,7 +9,7 @@ module.exports = {
     if (!nftStorageApiKey) {
       throw new Error("[nft.storage] API key is empty. (input nftStorageApiKey");
     }
-    return new NFTStorage({ nftStorageApiKey });
+    return new NFTStorage({ token: nftStorageApiKey });
   },
   upload: async (api, options) => {
     const { path, verbose } = options;
